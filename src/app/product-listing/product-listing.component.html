@@ -1,0 +1,26 @@
+<div class="product-list">
+    <div class="product" *ngFor="let product of products">
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <button (click)="showDetails(product)">View Details</button>
+    </div>
+  </div>
+  
+  <!-- Display the product details component -->
+  <app-productdetails [product]="selectedProduct"></app-productdetails>
+  
+  
+  
+  
+  
+  <!-- Buttons for creating and updating products -->
+  <button (click)="onCreateProduct()">Create Product</button><br> 
+  <br>
+  <br>
+  
+  
+  
+  
+  
+  

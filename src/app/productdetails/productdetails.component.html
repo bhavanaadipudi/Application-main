@@ -1,0 +1,24 @@
+<div *ngIf="product">
+    <h2>{{ product.title }}</h2>
+    <label for="title">Title:</label>
+    <input type="text" id="title" [(ngModel)]="product.title">
+    <label for="description">Description:</label>
+    <input type="text" id="description" [(ngModel)]="product.description">
+    <label for="price">Price:</label>
+    <input type="number" id="price" [(ngModel)]="product.price">
+    
+    <!-- Form for updating product details -->
+    <form (ngSubmit)="onSubmit()">
+      <label for="title">Title:</label>
+      <input type="text" id="title" [(ngModel)]="product.title" name="title">
+      <!-- Other input fields (description, price, etc.) -->
+    
+      <button type="submit">{{ isEditing ? 'Update' : 'Create' }}</button>
+    </form>
+  </div>
+  
+
+  <div *ngIf="!product">
+    <p>Select a product to view details.</p>
+  </div>
+  
